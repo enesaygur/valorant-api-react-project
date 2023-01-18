@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+@layer base {
+  html,
+  body {
+    @apply antialiased bg-red-500;
+    font-family: "Open Sans", sans-serif;
+    overflow-y: hidden;
+  }
+}
+
+.ReactFlagsSelect-module_selectOptionWithlabel__2GpmM {
+  @apply bg-red-500 transition-colors hover:!bg-red-400 hover:!text-gray-200 dark:!bg-black dark:hover:!text-red-500;
+}
+.ReactFlagsSelect-module_selectFlag__2q5gC {
+  @apply border-solid border-red-500 px-1 dark:!border-black;
+}
+
+.ReactFlagsSelect-module_selectOptionWithlabel__2GpmM {
+  @apply bg-red-600 text-white dark:!bg-black;
+}
+.ReactFlagsSelect-module_selectBtn__19wW7 {
+  @apply !p-0 !text-white;
+}
+.ReactFlagsSelect-module_selectOptions__3LNBJ {
+  @apply !py-0 !bg-red-600 !border-red-600 dark:!bg-black;
+}
+.ReactFlagsSelect-module_flagsSelect__2pfa2 {
+  @apply !bg-red-500 dark:!bg-black dark:border dark:border-red-500
+}
+.active li {
+  @apply bg-red-500 text-white;
+}
