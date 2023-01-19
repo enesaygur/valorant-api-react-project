@@ -6,9 +6,10 @@ export default function Weapons() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const { weapons } = useSelector((state) => state.weapons);
+  const { lang } = useSelector((state) => state.lang);
   useEffect(() => {
-    dispatch(getWeapons());
-  }, []);
+    dispatch(getWeapons(lang));
+  }, [lang]);
   return (
     <div className="!overflow-scroll !h-screen">
       <div className="container mx-auto my-4 mb-24">
@@ -52,7 +53,7 @@ export default function Weapons() {
                     <p>
                       {item.shopData != null
                         ? item.shopData.categoryText
-                        : " Melee"}
+                        : item.displayName}
                     </p>
                   </div>
                 </div>

@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import endpoints from "api/Api";
 
-export const getGears = createAsyncThunk("gears", async () => {
-  const res = await endpoints.getGears();
+export const getGears = createAsyncThunk("gears", async (lang) => {
+  const res = await endpoints.getGears(lang);
   if (res) {
     return res.data;
   }

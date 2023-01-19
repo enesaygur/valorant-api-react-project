@@ -6,10 +6,11 @@ export default function Gears() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const { gears } = useSelector((state) => state.gears);
+  const { lang } = useSelector((state) => state.lang);
 
   useEffect(() => {
-    dispatch(getGears());
-  }, []);
+    dispatch(getGears(lang));
+  }, [lang]);
 
   return (
     <div className="container mx-auto">
@@ -33,9 +34,15 @@ export default function Gears() {
                   </p>
                 </div>
                 <div className="pt-4 text-gray-800 dark:text-gray-300 ">
-                  <p>{t('Fiyat')}: {item.shopData.cost}</p>
-                  <p>{t('Kategori')}: {item.shopData.category}</p>
-                  <p>{t('Kategori Yazısı')}: {item.shopData.categoryText}</p>
+                  <p>
+                    {t("Fiyat")}: {item.shopData.cost}
+                  </p>
+                  <p>
+                    {t("Kategori")}: {item.shopData.category}
+                  </p>
+                  <p>
+                    {t("Kategori Yazısı")}: {item.shopData.categoryText}
+                  </p>
                 </div>
               </div>
             </div>

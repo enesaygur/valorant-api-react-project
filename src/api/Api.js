@@ -1,6 +1,6 @@
 import axios from "axios";
-
 const getMaps = async () => {
+  
   return axios
     .get("https://valorant-api.com/v1/maps")
     .then((res) => {
@@ -28,9 +28,9 @@ const getAgents = async () => {
     .catch((error) => false);
 };
 
-const getWeapons = async () => {
+const getWeapons = async (lang) => {
   return axios
-    .get("https://valorant-api.com/v1/weapons")
+    .get(`https://valorant-api.com/v1/weapons?language=${lang}`)
     .then((res) => {
       if (res.data.data) {
         return {
@@ -41,9 +41,9 @@ const getWeapons = async () => {
     })
     .catch((error) => false);
 };
-const getGears = async () => {
+const getGears = async (lang) => {
   return axios
-    .get("https://valorant-api.com/v1/gear")
+    .get(`https://valorant-api.com/v1/gear?language=${lang}`)
     .then((res) => {
       if (res.data.data) {
         return {
@@ -56,7 +56,10 @@ const getGears = async () => {
 };
 
 const endpoints = {
-  getMaps,getAgents,getWeapons,getGears
+  getMaps,
+  getAgents,
+  getWeapons,
+  getGears,
 };
 
 export default endpoints;

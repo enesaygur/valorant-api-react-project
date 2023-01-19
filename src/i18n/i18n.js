@@ -70,6 +70,38 @@ i18n
           Ses: "Sound",
         },
       },
+      de: {
+        translations: {
+          Anasayfa: "Startseite",
+          Ajanlar: "Vertretungen",
+          Zırh: "Rüstung",
+          Haritalar: "Karten",
+          Silahlar: "Waffen",
+          "Valorant API Dökümantasyonu": "Valorant API Dokumentation",
+          Ajanlar: "Vertretungen",
+          Zırhlar: "Rüstungen",
+          Haritalar: "Karten",
+          Silahlar: "Waffen",
+          "Agents Detail Information":
+            "Es zeigt spielbare Agenten in Valorant. Abgesehen davon werden auch die technischen Spezifikationen, Rollen, Fähigkeiten und Geräusche der Agenten behandelt, die sie im Spiel erzeugen",
+          "Gear Detail Information":
+            "Es gibt Informationen über die im Valorant verwendeten Rüstungen. Die Informationen enthalten den Namen, die Beschreibung, den Preis, die Kategorie und die Kategoriebeschreibung der Ausrüstung.",
+          "Maps Detail Information":
+            "Es gibt Informationen über die im Valorant verwendeten Karten. Diese Karten werden im Karussell angezeigt",
+          "Weapons Detail Information":
+            "Es zeigt auch die Verletzungs informationen am Körper über die gekauften Waffen, die im Valorant verkauft werden, mit Ausnahme ihrer technischen Merkmale",
+          Fiyat: "Kosten",
+          Kategori: "Kategorie",
+          "Kategori Yazısı": "Kategorie Text",
+          "Atış Oranı": "Feuerrate",
+          "Şarjör Kapasitesi": "Magazingröße",
+          "Şarjör Değiştirme Süresi": "Nachladezeit",
+          Kafa: "Kopfs",
+          Gövde: "Leibe",
+          Bacak: "Beine",
+          Ses: "Klang",
+        },
+      },
     },
     fallbackLng: "tr",
     ns: ["translations"],

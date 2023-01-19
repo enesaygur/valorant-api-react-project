@@ -40,27 +40,3 @@ export default function Maps() {
     </div>
   );
 }
-{
-  /*   <Slider {...settings} className=" flex justify-center ">
-        <div className="border-none">
-          <img
-            className="w-full h-[585px] object-cover rounded-xl"
-            src="https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/splash.png"
-            alt=""
-          />
-        </div>
-        <div className="border-none">
-          <img
-            className="w-full h-[585px] object-cover rounded-xl"
-            src="https://media.valorant-api.com/maps/d960549e-485c-e861-8d71-aa9d1aed12a2/splash.png"
-            alt=""
-          />
-        </div>
-      </Slider>
-      
-      
-      
-      
-      
-      */
-}

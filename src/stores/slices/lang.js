@@ -4,7 +4,7 @@ export const langSlice = createSlice({
   initialState: {
     lang: localStorage.getItem("lang")
       ? JSON.parse(localStorage.getItem("lang"))
-      : "tr",
+      : "tr-TR",
   },
   reducers: {
     setLang: (state,action) => {

@@ -39,12 +39,12 @@ export default function Header() {
                     {t("Anasayfa")}
                   </li>
                 </NavLink>
-                <NavLink to="/agents">
+                <NavLink to='/agents'>
                   <li className="text-red-500 text-base transition-colors hover:bg-red-600 hover:text-white p-2 rounded-lg">
                   {t("Ajanlar")}
                   </li>
                 </NavLink>
-                <NavLink to="/gears">
+                <NavLink to='/gears'>
                   <li className="text-red-500 text-base transition-colors hover:bg-red-600 hover:text-white p-2 rounded-lg">
                   {t("Zırh")}
                   </li>
@@ -62,7 +62,7 @@ export default function Header() {
               </ul>
             </nav>
             <div className="flex items-center justify-center">
-              <select
+              <select className="bg-red-500 text-white p-1 rounded-lg "
                 id="Language"
                 value={lang}
                 onChange={(e) => {
@@ -70,8 +70,9 @@ export default function Header() {
                   dispatch(setLang(e.target.value));
                 }}
               >
-                <option value="tr">Türkçe</option>
-                <option value="en">English</option>
+                <option value="tr-TR">Türkçe</option>
+                <option value="en-US">English</option>
+                <option value="de-DE">Deutsch</option>
               </select>
             </div>
             <button

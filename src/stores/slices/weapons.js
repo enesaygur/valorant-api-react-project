@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import endpoints from "api/Api";
 
-export const getWeapons = createAsyncThunk("weapons", async () => {
-  const res = await endpoints.getWeapons();
+export const getWeapons = createAsyncThunk("weapons", async (lang) => {
+  const res = await endpoints.getWeapons(lang);
   if (res) {
     return res.data;
   }

@@ -6,10 +6,11 @@ import Gears from "pages/Gears";
 import Maps from "pages/Maps";
 import Weapons from "pages/Weapons";
 import { Route, Routes } from "react-router-dom";
-import {  useSelector } from "react-redux";
-import Api from "api/Api";
+import { useSelector } from "react-redux";
+import "api/Api";
 function App() {
   const { darkMode } = useSelector((state) => state.theme);
+  const { lang } = useSelector((state) => state.lang);
 
   return (
     <div className={darkMode ? "dark" : "light"}>

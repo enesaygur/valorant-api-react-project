@@ -54,13 +54,13 @@ export default function Home() {
         <div className="w-8/12">
           <img className="w-full h-[620px]" src={valorant_home_page_image} />
         </div>
-        <div className="grid grid-cols-2 px-2 py-4 gap-4  align-middle mx-auto text-justify">
+        <div className="grid grid-cols-2 px-2 py-4 gap-4  align-middle mx-auto text-left">
           {data.map((item, index) => (
             <div className="bg-red-600 w-[225px]" key={index}>
               <div className="h-2/5 bg-gray-100">{item.icon}</div>
               <div className="bg-red-600 h-auto text-gray-100">
-                <h2 className="font-semibold p-2 ">{item.title}</h2>
-                <p className="p-2 text-sm break-normal">{item.details}</p>
+                <h2 className="font-semibold px-2 py-1  ">{item.title}</h2>
+                <p className="p-1 text-sm break-normal">{item.details}</p>
               </div>
             </div>
           ))}
