@@ -3,11 +3,19 @@ import ReactFlagsSelect from "react-flags-select";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { setDarkMode } from "stores/slices/theme";
+import { setLang } from "stores/slices/lang";
 import { FaToggleOff, FaToggleOn } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 export default function Header() {
   const { darkMode } = useSelector((state) => state.theme);
-  const [selected, setSelected] = useState("TR");
+  const { lang } = useSelector((state) => state.lang);
   const dispatch = useDispatch();
+  
+  const { i18n, t } = useTranslation();
+  const onChangeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
     <div>
       <div className="bg-gray-100 items-center font-serif z-10 dark:bg-black">
@@ -28,48 +36,49 @@ export default function Header() {
               <ul className="grid grid-cols-5 gap-x-2 text-center">
                 <NavLink to="/">
                   <li className="text-red-500 text-base transition-colors hover:bg-red-600 hover:text-white p-2 rounded-xl ">
-                    Anasayfa
+                    {t("Anasayfa")}
                   </li>
                 </NavLink>
                 <NavLink to="/agents">
                   <li className="text-red-500 text-base transition-colors hover:bg-red-600 hover:text-white p-2 rounded-lg">
-                    Ajanlar
+                  {t("Ajanlar")}
                   </li>
                 </NavLink>
                 <NavLink to="/gears">
                   <li className="text-red-500 text-base transition-colors hover:bg-red-600 hover:text-white p-2 rounded-lg">
-                    Zırh
+                  {t("Zırh")}
                   </li>
                 </NavLink>
                 <NavLink to="/maps">
                   <li className="text-red-500 text-base transition-colors hover:bg-red-600 hover:text-white p-2 rounded-lg">
-                    Haritalar
+                  {t("Haritalar")}
                   </li>
                 </NavLink>
                 <NavLink to="/weapons">
                   <li className="text-red-500 text-base transition-colors hover:bg-red-600 hover:text-white p-2 rounded-lg">
-                    Silahlar
+                  {t("Silahlar")}
                   </li>
                 </NavLink>
               </ul>
             </nav>
             <div className="flex items-center justify-center">
-              <ReactFlagsSelect
-                countries={["TR", "US"]}
-                customLabels={{
-                  TR: "Türkçe",
-                  US: "English",
+              <select
+                id="Language"
+                value={lang}
+                onChange={(e) => {
+                  onChangeLanguage(e.target.value);
+                  dispatch(setLang(e.target.value));
                 }}
-                placeholder="Select Language"
-                onSelect={(code) => setSelected(code)}
-                selected={selected}
-                className="flag-select w-[150px] bg-red-600 h-10 rounded-lg px-3 my-1"
-              />
+              >
+                <option value="tr">Türkçe</option>
+                <option value="en">English</option>
+              </select>
             </div>
             <button
               onClick={() => dispatch(setDarkMode())}
               className="text-red-500 transition-all"
-            > {!darkMode ? ( <FaToggleOff size={25}/>) : ( <FaToggleOn size={25} />)}   
+            >
+              {!darkMode ? <FaToggleOff size={25} /> : <FaToggleOn size={25} />}
             </button>
           </div>
         </div>

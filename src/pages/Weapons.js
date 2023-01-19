@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getWeapons } from "stores/slices/weapons";
+import { useTranslation } from "react-i18next";
 export default function Weapons() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { weapons } = useSelector((state) => state.weapons);
   useEffect(() => {
@@ -27,25 +29,25 @@ export default function Weapons() {
                   </h2>
                   <div className="text-red-500">
                     <p>
-                      Atış Oranı:{" "}
+                    {t('Atış Oranı')}:
                       {item.weaponStats != null
-                        ? item.weaponStats.fireRate
+                        ? item.weaponStats.fireRate.toFixed(2)
                         : "-"}
                     </p>
                     <p>
-                      Şarjör Kapasitesi:{" "}
+                      {t('Şarjör Kapasitesi')}:
                       {item.weaponStats != null
                         ? item.weaponStats.magazineSize
                         : "-"}
                     </p>
                     <p>
-                      Şarjör Değiştirme Süresi:{" "}
+                      {t('Şarjör Değiştirme Süresi')}:
                       {item.weaponStats != null
                         ? item.weaponStats.reloadTimeSeconds
                         : "-"}
                     </p>
                     <p>
-                      Fiyat: {item.shopData != null ? item.shopData.cost : "-"}
+                      {t('Fiyat')}: {item.shopData != null ? item.shopData.cost : "-"}
                     </p>
                     <p>
                       {item.shopData != null
@@ -66,23 +68,23 @@ export default function Weapons() {
                             <div className="w-full">
                               <div className="grid grid-cols-3  border border-red-400 place-items-center text-red-500">
                                 <div className="text-center w-full ">
-                                  <p>Kafa</p>
-                                  <p>{itm.headDamage}</p>
+                                  <p>{t('Kafa')}</p>
+                                  <p>{itm.headDamage.toFixed(0)}</p>
                                 </div>
                                 <div>
-                                  <p>Gövde</p>
-                                  <p>{itm.bodyDamage}</p>
+                                  <p>{t('Gövde')}</p>
+                                  <p>{itm.bodyDamage.toFixed(0)}</p>
                                 </div>
                                 <div>
-                                  <p>Bacak</p>
-                                  <p>{itm.legDamage.toFixed(2)}</p>
+                                  <p>{t('Bacak')}</p>
+                                  <p>{itm.legDamage.toFixed(0)}</p>
                                 </div>
                               </div>
                             </div>
                           </div>
                         ))
                       ) : (
-                        "ssss"
+                        "-"
                       )
                     ) : (
                       <div className="w-full text-red-500 text-center border border-red-400">
@@ -91,15 +93,15 @@ export default function Weapons() {
                         </div>
                         <div className="grid grid-cols-3  border border-red-400 place-items-center text-red-500">
                           <div className="text-center w-full ">
-                            <p>Kafa</p>
+                            <p>{t('Kafa')}</p>
                             <p>-</p>
                           </div>
                           <div>
-                            <p>Gövde</p>
+                            <p>{t('Gövde')}</p>
                             <p>-</p>
                           </div>
                           <div>
-                            <p>Bacak</p>
+                            <p>{t('Bacak')}</p>
                             <p>-</p>
                           </div>
                         </div>

@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGears } from "stores/slices/gears";
+import { useTranslation } from "react-i18next";
 export default function Gears() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { gears } = useSelector((state) => state.gears);
 
@@ -19,10 +21,7 @@ export default function Gears() {
               key={index}
             >
               <div className="bg-red-500 flex justify-center items-center align-middle">
-                <img
-                  className="w-52 h-52"
-                  src={item.shopData.newImage}
-                />
+                <img className="w-52 h-52" src={item.shopData.newImage} />
               </div>
               <div className="p-4 ">
                 <div>
@@ -30,12 +29,13 @@ export default function Gears() {
                     {item.displayName}
                   </h2>
                   <p className="text-sm text-gray-800 dark:text-gray-300 ">
-                    {item.description}</p>
+                    {item.description}
+                  </p>
                 </div>
                 <div className="pt-4 text-gray-800 dark:text-gray-300 ">
-                  <p>Fiyat: {item.shopData.cost}</p>
-                  <p>Kategori:  {item.shopData.category}</p>
-                  <p>Kategori Yazısı:  {item.shopData.categoryText}</p>
+                  <p>{t('Fiyat')}: {item.shopData.cost}</p>
+                  <p>{t('Kategori')}: {item.shopData.category}</p>
+                  <p>{t('Kategori Yazısı')}: {item.shopData.categoryText}</p>
                 </div>
               </div>
             </div>
